@@ -14,7 +14,7 @@ export default function App() {
 
   useEffect(() => {
     (async () => {
-      const { status } = await Camera.requestPermissionsAsync();
+      const { status } = await Camera.requestCameraPermissionsAsync();
       if (status === 'granted') {
         setStartCamera(true);
       } else {
@@ -24,7 +24,7 @@ export default function App() {
   }, []);
 
   const __startCamera = async () => {
-    const { status } = await Camera.requestPermissionsAsync();
+    const { status } = await Camera.requestCameraPermissionsAsync();
     if (status === 'granted') {
       setStartCamera(true);
     } else {
